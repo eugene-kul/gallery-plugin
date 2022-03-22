@@ -70,6 +70,12 @@ class GalleryDetails extends ComponentBase {
             'type'          => 'checkbox',
             'default'       => 1,
          ],
+         'galleryscripts' => [
+            'title'         => 'eugene3993.gallery::lang.gallery_list.galleryscripts.title',
+            'description'   => 'eugene3993.gallery::lang.gallery_list.galleryscripts.description',
+            'type'          => 'checkbox',
+            'default'       => 1,
+         ],
          'notFoundMessage' => [
             'title'       => 'eugene3993.gallery::lang.gallery_photo.notFoundMessage.title',
             'description' => 'eugene3993.gallery::lang.gallery_photo.notFoundMessage.description',
@@ -85,9 +91,11 @@ class GalleryDetails extends ComponentBase {
       
       if ($this->property('gallerystyle')) {
          $this->addCss('assets/css/gallery.css');
+      }
+      if ($this->property('galleryscripts')) {
+         $this->addJs('assets/js/frontscripts.js');
          $this->addCss('assets/css/fancybox-with-form.css');
       }
-      $this->addJs('assets/js/frontscripts.js');
       
       $this->record = $this->loadRecord();
       $this->prepareVars($this->record);
@@ -132,18 +140,14 @@ class GalleryDetails extends ComponentBase {
       $this->first_image = $page_items-$items;
       $this->last_image = $page_items;
 
-      $paginateHTML = 
+      if($last_page > 1) {
+         $paginateHTML = 
          '<ul class="pagination">'.
          ComponentHelper::instance()->get_pagination_item($current_page,$last_page)
          .'</ul>';
 
-      $this->renderPaginate = $paginateHTML;
-
-      $this->page['result'] = 
-         'Items: '.$count.'<br>'.
-         'Current page: '.$current_page.'<br>'.
-         'Last page: '.$last_page.'<br>'. 
-         ceil($count / $items);
+         $this->renderPaginate = $paginateHTML;
+      }
    }
 
    

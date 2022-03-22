@@ -12,11 +12,6 @@ fields:
         type: text
 tabs:
     fields:
-        hide:
-            label: 'eugene3993.gallery::lang.models.fields.hide'
-            span: auto
-            type: switch
-            tab: 'eugene3993.gallery::lang.models.fields.tab1'
         photos:
             label: 'eugene3993.gallery::lang.models.fields.files'
             mode: image
@@ -29,6 +24,11 @@ tabs:
             span: full
             type: fileupload
             tab: 'eugene3993.gallery::lang.models.fields.tab1'
+        hide:
+            label: 'eugene3993.gallery::lang.models.fields.hide'
+            span: auto
+            type: switch
+            tab: 'eugene3993.gallery::lang.models.fields.tab2'
         use_form_in_gallery:
             label: 'eugene3993.gallery::lang.models.fields.use_form'
             span: auto

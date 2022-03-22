@@ -3,8 +3,6 @@
 {% set gallerySorting = galleryItem.sort_in_date ? galleryItem.photos|sort((a, b) => b.created_at <=> a.created_at) : galleryItem.photos %}
 
 {% if galleryItem %}
-   {# {{ result|raw }} <br> <br> #}
-
    <style>:root {--itemMargin: {{ _this.margin }}}</style>
 
    <div class="gallery-list-body">

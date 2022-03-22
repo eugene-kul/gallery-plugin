@@ -1,8 +1,0 @@
-<?php
-	if ($record->spam == true) { 
-		echo '<div style="color: tomato;"><b>SPAM</b></div>';
-	} elseif ($record->unread == true and $record->publish == false) {
-		echo '<div style="white-space: nowrap;"><b>'. e(trans('eugene3993.gallery::lang.unread')) . '</b><i class="icon-exclamation"></i></div>';
-	}
-?>
- 

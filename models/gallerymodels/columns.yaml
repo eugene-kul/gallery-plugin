@@ -6,9 +6,24 @@ columns:
     folder_name:
         label: 'eugene3993.gallery::lang.models.columns.name'
         type: text
+    length:
+        label: 'eugene3993.gallery::lang.models.columns.length'
+        type: partial
+        path: $/eugene3993/gallery/models/gallerymodels/_photo-length.htm
+        width: 150px
+    use_form_in_gallery:
+        label: 'eugene3993.gallery::lang.models.columns.use_form'
+        type: switch
+        width: 120px
+    hide:
+        label: 'eugene3993.gallery::lang.models.columns.hide'
+        type: switch
+        width: 120px
     updated_at:
         label: 'eugene3993.gallery::lang.models.columns.updated_at'
         type: timesince
+        width: 200px
     created_at:
         label: 'eugene3993.gallery::lang.models.columns.created_at'
         type: timetense
+        width: 200px
