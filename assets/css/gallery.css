@@ -1,0 +1,208 @@
+.gallery-list-body {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 0;
+}
+.gallery-list-item {
+	border: 2px solid #ccc;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+	background-color: #fff;
+	border-radius: 5px;
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+   margin: 0 var(--itemMargin) calc((var(--itemMargin) * 2));
+}
+.gallery-list-grid-2 {
+   flex: 0 1 calc((100% / 2) - (var(--itemMargin) * 2));
+   max-height: 320px;
+}
+.gallery-list-grid-3 {
+   flex: 0 1 calc((100% / 3) - (var(--itemMargin) * 2));
+   max-height: 280px;
+}
+.gallery-list-grid-4 {
+   flex: 0 1 calc((100% / 4) - (var(--itemMargin) * 2));
+   max-height: 240px;
+}
+.gallery-list-grid-5 {
+   flex: 0 1 calc((100% / 5) - (var(--itemMargin) * 2));
+   max-height: 200px;
+}
+
+@media (max-width: 991px) {
+	.gallery-list-grid-5 {
+      flex: 0 1 calc((100% / 4) - (var(--itemMargin) * 2));
+  }
+   .gallery-list-grid-4 {
+      flex: 0 1 calc((100% / 3) - (var(--itemMargin) * 2));
+  }
+   .gallery-list-grid-3 {
+      max-height: 230px;
+  }
+}
+
+@media (max-width: 767px) {
+   .gallery-list-grid-2 {
+      max-height: 260px;
+  }
+	.gallery-list-grid-3, .gallery-list-grid-4, .gallery-list-grid-5 {
+      flex: 0 1 calc((100% / 3) - (var(--itemMargin) * 2));
+      max-height: 220px;
+  }
+}
+
+@media (max-width: 576px) {
+	.gallery-list-grid-2, .gallery-list-grid-3, .gallery-list-grid-4, .gallery-list-grid-5 {
+      flex: 0 1 calc((100% / 2) - (var(--itemMargin) * 2));
+      max-height: 200px;
+  }
+}
+ 
+.gallery-list-item:hover {
+	border-color: var(--colorHover2);
+}
+.gallery-list-item:hover .gallery-list-item-image {
+	opacity: 1;
+}
+.gallery-list-item:hover .gallery-list-item-title {
+	background-color: var(--colorHover2);
+}
+.gallery-list-item:hover .gallery-list-item-text {
+	background-color: var(--colorHover2);
+}
+.gallery-list-item:hover .gallery-list-item-title.v2 {
+	background-color: rgba(0,0,0,0.7);
+}
+.gallery-list-item-image {
+	display: inline-block;
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+	opacity: 0.9;
+	object-fit: cover;
+	object-position: 50% 50%;
+}
+.gallery-list-item-title {
+	text-align: center;
+	color: #333;
+	padding: 10px;
+}
+ @media (max-width: 767px) {
+   .gallery-list-item-title {
+      padding: 5px 10px;
+   }
+}
+.gallery-list-item-length {
+   background-color: rgba(0,0,0,0.5);
+   color: #fff;
+   border-radius: 5px;
+   padding: 2px 5px;
+   position: absolute;
+   top: 5px;
+   right: 5px;
+   opacity: 1;
+   z-index: 1;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.gallery-list-item-length svg {
+   width: 20px;
+   height: 20px;
+   margin-right: 5px;
+}
+.gallery-list-item-length svg path {
+   fill: #fff;
+}
+.gallery-list-item-title.v2 {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	right: 0;
+	color: #fff;
+	background-color: rgba(0,0,0,0.5);
+}
+@media (max-width: 479.98px) {
+	.gallery-list-item-title {
+	  font-size: 13px;
+	}
+}
+.gallery-list-item-text {
+	display: inline-block;
+	flex: 1 1 auto;
+	color: #333;
+	line-height: 15px;
+	padding: 10px;
+	text-align: center;
+	border-top: 1px solid #777;
+}
+@media (max-width: 479.98px) {
+	.gallery-list-item-text {
+	  font-size: 13px;
+	  padding: 10px 5px;
+	}
+}
+
+.gallery-list-pagination {
+   width: 100%;
+   text-align: center;
+   padding: 10px 0;
+   
+}
+
+.gallery-list-pagination .pagination {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.gallery-list-pagination .pagination > li.disabled > span {
+   cursor: default;
+   background-color: #f5f5f5;
+   color: #999;
+}
+
+.gallery-list-pagination .pagination > li {
+   margin-bottom: 5px;
+}
+
+.gallery-list-pagination .pagination > li > a > b, .gallery-list-pagination .pagination > li.disabled > span > b {
+   text-transform: uppercase;
+   display: inline-block;
+   font-size: 15px;
+   font-weight: 400;
+}
+
+.gallery-list-pagination .pagination > li:first-child > a > b, .gallery-list-pagination .pagination > li:first-child.disabled > span > b {
+   padding-left: 5px;
+}
+
+.gallery-list-pagination .pagination > li:last-child > a > b, .gallery-list-pagination .pagination > li:last-child.disabled > span > b {
+   padding-right: 5px;
+}
+
+.gallery-list-pagination .pagination > li > a.hover {
+   background-color: #f5f5f5;
+}
+
+.pagination > li > a, .pagination > li > span {
+   min-width: 44px;
+}
+
+@media (max-width: 575px) {
+	.gallery-list-pagination .hide-in-mobile {
+	  display: none;
+	}
+}
+
+.gallery-not-found-message {
+   font-size: 18px;
+   padding: 20px;
+   width: 100%;
+   font-weight: 400;
+   text-align: center;
+}

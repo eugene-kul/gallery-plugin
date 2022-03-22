@@ -1,0 +1,37 @@
+{% set _this = __SELF__ %}
+{% set galleryItem = _this.record %}
+{% set gallerySorting = galleryItem.sort_in_date ? galleryItem.photos|sort((a, b) => b.created_at <=> a.created_at) : galleryItem.photos %}
+
+{% if galleryItem %}
+   {# {{ result|raw }} <br> <br> #}
+
+   <style>:root {--itemMargin: {{ _this.margin }}}</style>
+
+   <div class="gallery-list-body">
+      {% for image in gallerySorting %}
+         {% if loop.index0 >= _this.first_image and loop.index0 < _this.last_image %}
+            {% set imageTitle = image.title ? image.title : image.description %}
+            <a class="gallery-list-item gallery-list-grid-{{ _this.grid }}" href="{{ image.path }}"
+               title="{{ imageTitle }}"
+               data-gbox="gallery"
+               data-caption="{{ image.title ? image.title ~ (image.description ? ' ' : '') ~ image.description : image.description }}"
+               {% if galleryItem.use_form_in_gallery %}
+                  data-form="{{ image.title }}"
+                  data-formtype="{{ galleryItem.form_type }}"
+                  data-form_btn_send="{{ galleryItem.form_btn_send }}"
+                  data-form_btn="{{ galleryItem.form_btn }}"
+                  data-personal_url="{{ 'error'|page }}"
+                  {% if galleryItem.form_phone %}data-phone="{{ citeSetting.phone }}"{% endif %}
+               {% endif %}
+            >	
+               <figure>
+                  <img class="gallery-list-item-image" src="{{ image.thumb(280, 280, {'mode':'crop'}) }}" alt="{{ imageTitle }}" title="{{ imageTitle }}">
+                  {% if imageTitle %}<figcaption class="gallery-list-item-title v2">{{ imageTitle }}</figcaption>{% endif %}
+               </figure>
+            </a>
+         {% endif %}
+      {% endfor %}
+
+   </div>
+   <div class="gallery-list-pagination">{{ _this.renderPaginate|raw }}</div>
+{% endif %}

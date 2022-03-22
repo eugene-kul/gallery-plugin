@@ -1,0 +1,85 @@
+fields:
+    folder_name:
+        label: 'eugene3993.gallery::lang.models.fields.name'
+        span: auto
+        type: text
+    slug:
+        label: URL
+        span: auto
+        preset:
+            field: folder_name
+            type: slug
+        type: text
+tabs:
+    fields:
+        hide:
+            label: 'eugene3993.gallery::lang.models.fields.hide'
+            span: auto
+            type: switch
+            tab: 'eugene3993.gallery::lang.models.fields.tab1'
+        photos:
+            label: 'eugene3993.gallery::lang.models.fields.files'
+            mode: image
+            imageWidth: '100'
+            imageHeight: '100'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: full
+            type: fileupload
+            tab: 'eugene3993.gallery::lang.models.fields.tab1'
+        use_form_in_gallery:
+            label: 'eugene3993.gallery::lang.models.fields.use_form'
+            span: auto
+            type: switch
+            tab: 'eugene3993.gallery::lang.models.fields.tab2'
+        sort_in_date:
+            label: 'eugene3993.gallery::lang.models.fields.sort'
+            span: auto
+            type: switch
+            tab: 'eugene3993.gallery::lang.models.fields.tab2'
+        form_phone:
+            label: 'eugene3993.gallery::lang.models.fields.phone'
+            span: auto
+            trigger:
+                action: show
+                field: use_form_in_gallery
+                condition: checked
+            type: switch
+            tab: 'eugene3993.gallery::lang.models.fields.tab2'
+        form_type:
+            label: 'eugene3993.gallery::lang.models.fields.type'
+            options:
+                button: 'eugene3993.gallery::lang.models.fields.types.button'
+                fixed: 'eugene3993.gallery::lang.models.fields.types.fixed'
+                fixed-left: 'eugene3993.gallery::lang.models.fields.types.f_left'
+                fixed-stick: 'eugene3993.gallery::lang.models.fields.types.f_stick'
+            showSearch: true
+            span: auto
+            trigger:
+                action: show
+                field: use_form_in_gallery
+                condition: checked
+            type: dropdown
+            tab: 'eugene3993.gallery::lang.models.fields.tab2'
+        form_btn_send:
+            label: 'eugene3993.gallery::lang.models.fields.btn_text'
+            span: auto
+            placeholder: 'Оставить заявку'
+            trigger:
+                action: show
+                field: use_form_in_gallery
+                condition: checked
+            type: text
+            tab: 'eugene3993.gallery::lang.models.fields.tab2'
+        form_btn:
+            label: 'eugene3993.gallery::lang.models.fields.btn_form'
+            span: auto
+            placeholder: 'Заказать такой же проект'
+            trigger:
+                action: show
+                field: use_form_in_gallery
+                condition: checked
+            type: text
+            tab: 'eugene3993.gallery::lang.models.fields.tab2'

@@ -1,0 +1,14 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    folder_name:
+        label: 'eugene3993.gallery::lang.models.columns.name'
+        type: text
+    updated_at:
+        label: 'eugene3993.gallery::lang.models.columns.updated_at'
+        type: timesince
+    created_at:
+        label: 'eugene3993.gallery::lang.models.columns.created_at'
+        type: timetense

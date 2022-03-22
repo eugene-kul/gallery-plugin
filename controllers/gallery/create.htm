@@ -1,0 +1,48 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('eugene3993/gallery/gallery') ?>"><?php echo e(trans('eugene3993.gallery::lang.breadcrumbs.gallery_list')) ?></a></li>
+        <li><?php echo e(trans('eugene3993.gallery::lang.breadcrumbs.new')) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <?= Form::open(['class' => 'layout']) ?>
+
+        <div class="layout-row">
+            <?= $this->formRender() ?>
+        </div>
+
+        <div class="form-buttons">
+            <div class="loading-indicator-container">
+                <button
+                    type="submit"
+                    data-request="onSave"
+                    data-hotkey="ctrl+s, cmd+s"
+                    data-load-indicator="<?php echo e(trans('eugene3993.gallery::lang.buttons.save_indicator')) ?>"
+                    class="btn btn-primary">
+                    <?php echo e(trans('eugene3993.gallery::lang.buttons.save')) ?>
+                </button>
+                <button
+                    type="button"
+                    data-request="onSave"
+                    data-request-data="close:1"
+                    data-hotkey="ctrl+enter, cmd+enter"
+                    data-load-indicator="<?php echo e(trans('eugene3993.gallery::lang.buttons.save_indicator')) ?>"
+                    class="btn btn-default">
+                    <?php echo e(trans('eugene3993.gallery::lang.buttons.save_and_close')) ?>
+                </button>
+                <span class="btn-text">
+                    <?php echo e(trans('eugene3993.gallery::lang.buttons.or')) ?> <a href="<?= Backend::url('eugene3993/gallery/gallery') ?>"><?php echo e(trans('eugene3993.gallery::lang.buttons.cancel')) ?></a>
+                </span>
+            </div>
+        </div>
+
+    <?= Form::close() ?>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('eugene3993/gallery/gallery') ?>" class="btn btn-default"><?php echo e(trans('eugene3993.gallery::lang.errors.return_list')) ?></a></p>
+
+<?php endif ?>

@@ -1,0 +1,30 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Gallery
+
+# Model Form Field configuration
+form: $/eugene3993/gallery/models/gallerymodels/fields.yaml
+
+# Model Class name
+modelClass: Eugene3993\Gallery\Models\GalleryModels
+
+# Default redirect location
+defaultRedirect: eugene3993/gallery/gallery
+
+# Create page
+create:
+    title: 'eugene3993.gallery::lang.page_title.create'
+    redirect: eugene3993/gallery/gallery/update/:id
+    redirectClose: eugene3993/gallery/gallery
+    flashSave: 'eugene3993.gallery::lang.messages.save'
+
+# Update page
+update:
+    title: 'eugene3993.gallery::lang.page_title.edit'
+    redirect: eugene3993/gallery/gallery
+    redirectClose: eugene3993/gallery/gallery
+    flashSave: 'eugene3993.gallery::lang.messages.save'
+    flashDelete: 'eugene3993.gallery::lang.messages.remove'
