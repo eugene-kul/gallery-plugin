@@ -155,50 +155,6 @@
 	}
 }
 
-
-
-/* 
-
-.gallery-list-pagination .pagination {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-wrap: wrap;
-}
-
-.gallery-list-pagination .pagination > li.disabled > span {
-   cursor: default;
-   background-color: #f5f5f5;
-   color: #999;
-}
-
-.gallery-list-pagination .pagination > li {
-   margin-bottom: 5px;
-}
-
-.gallery-list-pagination .pagination > li > a > b, .gallery-list-pagination .pagination > li.disabled > span > b {
-   text-transform: uppercase;
-   display: inline-block;
-   font-size: 15px;
-   font-weight: 400;
-}
-
-.gallery-list-pagination .pagination > li:first-child > a > b, .gallery-list-pagination .pagination > li:first-child.disabled > span > b {
-   padding-left: 5px;
-}
-
-.gallery-list-pagination .pagination > li:last-child > a > b, .gallery-list-pagination .pagination > li:last-child.disabled > span > b {
-   padding-right: 5px;
-}
-
-.gallery-list-pagination .pagination > li > a.hover {
-   background-color: #f5f5f5;
-}
-
-.pagination > li > a, .pagination > li > span {
-   min-width: 44px;
-} */
-
 .gallery-list-pagination .display-on-mobile {
    display: none;
 }
@@ -227,7 +183,7 @@
    margin: 10px 0;
 }
 
-.pagination {
+.gallery-pagination {
   list-style-type: none;
   display: inline-block;
   font-size: 100%;
@@ -236,7 +192,7 @@
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-.pagination li {
+.gallery-pagination li {
    display: inline-block;
    font-size: 100%;
    width: auto;
@@ -245,29 +201,29 @@
    margin: 0 1px;
 }
 
-.pagination li a {
+.gallery-pagination li a {
    color: #555;
   text-decoration: none;
   font-weight: 700;
 }
 
-.pagination li span {
+.gallery-pagination li span {
    cursor: default;
    color: #aaa;
 }
 
-.pagination li a,
-.pagination li span {
+.gallery-pagination li a,
+.gallery-pagination li span {
    display: inline-block;
    font-size: 16px;
-   min-width: 20px;
+   min-width: 36px;
    min-height: 20px;
    line-height: 20px;
    padding: .5em;
    border-radius: 5px;
 }
 
-.pagination li.active span {
+.gallery-pagination li.active span {
    position: relative;
    color: #fff;
    font-weight: 700;
@@ -275,7 +231,7 @@
    background-color: cornflowerblue;
 }
 
-.pagination li.active span:before {
+.gallery-pagination li.active span:before {
    content: '';
    position: absolute;
    top: 3px;
@@ -286,7 +242,7 @@
    z-index: -1;
 }
 
-.pagination li a:hover,
-.pagination li a:focus {
+.gallery-pagination li a:hover,
+.gallery-pagination li a:focus {
    color: cornflowerblue;
 }

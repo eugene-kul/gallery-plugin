@@ -142,7 +142,7 @@ class GalleryDetails extends ComponentBase {
 
       if($last_page > 1) {
          $paginateHTML = 
-         '<ul class="pagination">'.
+         '<ul class="gallery-pagination">'.
          ComponentHelper::instance()->get_pagination_item($current_page,$last_page)
          .'</ul>';
 
