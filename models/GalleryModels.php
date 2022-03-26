@@ -11,7 +11,6 @@ class GalleryModels extends Model
 
    public function onRun() {
       $this->addCss('assets/css/backend.css'); //?
-      dd($this);
    }
 
    /**
