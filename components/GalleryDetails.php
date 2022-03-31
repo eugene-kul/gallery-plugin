@@ -79,7 +79,7 @@ class GalleryDetails extends ComponentBase {
          'notFoundMessage' => [
             'title'       => 'eugene3993.gallery::lang.gallery_photo.notFoundMessage.title',
             'description' => 'eugene3993.gallery::lang.gallery_photo.notFoundMessage.description',
-            'default'     => 'eugene3993.gallery::lang.gallery_photo.notFoundMessage.default',
+            'default'     => Lang::get('eugene3993.gallery::lang.gallery_photo.notFoundMessage.default'),
             'type'        => 'string',
             'showExternalParam' => false
          ]
